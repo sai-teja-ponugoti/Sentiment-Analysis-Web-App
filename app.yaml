@@ -9,7 +9,7 @@ resources:
   memory_gb: 8
   disk_size_gb: 25
   
- handlers:
+handlers:
 - url: /.*
   script: main.app
 
