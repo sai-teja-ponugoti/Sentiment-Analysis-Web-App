@@ -6,10 +6,5 @@ resources:
   memory_gb: 8
   disk_size_gb: 15
 
-automatic_scaling:
-  target_cpu_utilization: 0.95
-  max_concurrent_requests: 4
-  target_throughput_utilization: 0.95
-
-entrypoint: gunicorn -b :8080 -w 1 --max-requests=1 main:app
+entrypoint: gunicorn -b :8080 --max-requests=1 main:app
 
