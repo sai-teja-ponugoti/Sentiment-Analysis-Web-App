@@ -1,10 +1,17 @@
 runtime: python37
 instance_class: F4_1G
 
+manual_scaling:
+  instances: 1
+  
 resources:
   cpu: 8
   memory_gb: 8
-  disk_size_gb: 15
+  disk_size_gb: 25
+  
+ handlers:
+- url: /.*
+  script: main.app
 
 entrypoint: gunicorn -b :8080 --max-requests=1 main:app
 
